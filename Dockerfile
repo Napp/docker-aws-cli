@@ -6,6 +6,7 @@ RUN apt-get update && \
 
 RUN apt-get install -y \
     zip \
+    curl \
     python-pip 
     
 RUN pip install -U pip && \
