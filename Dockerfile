@@ -8,7 +8,8 @@ RUN apt-get install -y --no-install-recommends \
     zip \
     curl \
     python-pip \
-    groff
+    groff \
+    python-setuptools
     
 RUN pip install -U pip && \
     pip install awscli
