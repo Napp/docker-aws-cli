@@ -7,7 +7,8 @@ RUN apt-get update && \
 RUN apt-get install -y \
     zip \
     curl \
-    python-pip 
+    python-pip \
+    groff
     
 RUN pip install -U pip && \
     pip install awscli
