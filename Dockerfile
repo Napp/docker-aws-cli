@@ -4,10 +4,12 @@ MAINTAINER Mads Møller, mm@napp.dk
 RUN apt-get update && \
     apt-get upgrade -y
 
-RUN apt-get install -y \
+RUN apt-get install -y --no-install-recommends \
     zip \
     curl \
-    python-pip 
+    python-pip \
+    groff \
+    python-setuptools
     
 RUN pip install -U pip && \
     pip install awscli
