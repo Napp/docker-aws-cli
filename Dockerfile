@@ -12,5 +12,6 @@ RUN apt-get install -y --no-install-recommends \
     python-setuptools
     
 RUN pip install -U pip && \
-    pip install awscli
+    pip install awscli && \
+    pip install --user aws-sam-cli
     
