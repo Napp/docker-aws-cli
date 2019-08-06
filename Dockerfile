@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER Mads Møller, mm@napp.dk
 
 RUN apt-get update && \
-    install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
     zip \
     curl \
     python-dev python3-dev \
