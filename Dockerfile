@@ -16,7 +16,9 @@ RUN apt-get update && \
     software-properties-common && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
-    apt-get update && \
+    rm -rf /var/lib/apt/lists/* 
+    
+RUN apt-get update && \
     apt-get install -y docker-ce --no-install-recommends && \
     rm -rf /var/lib/apt/lists/* 
 
