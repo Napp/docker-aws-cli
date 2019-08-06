@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER Mads Møller, mm@napp.dk
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+RUN apt update && \
+    apt install -y --no-install-recommends \
     zip \
     curl \
     python-dev python3-dev \
@@ -11,17 +11,16 @@ RUN apt-get update && \
     python3-pip \
     groff \
     python3-setuptools \
+    gpg-agent \
     apt-transport-https \
-    ca-certificates \ 
+    ca-certificates \
     software-properties-common && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
-    rm -rf /var/lib/apt/lists/* 
-    
-RUN apt-get update && \
-    apt-get install -y docker-ce --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/* 
+    rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install awscli
+RUN apt update && \
+    apt install -y docker-ce --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install aws-sam-cli
+RUN pip3 install awscli aws-sam-cli
